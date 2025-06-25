@@ -1,0 +1,170 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #eeeeea;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;   
+    margin-top: 20px;
+    background: linear-gradient(to right, blue, pink);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.card > .row {
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon{
+    background: #223;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    width: 50px;
+}
+
+.card > .row > .description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease; 
+}
+
+.description p {
+    color: #000;
+    padding-top: 5px;
+}
+
+.description h4{
+    text-transform: uppercase;
+}
+input{
+    display: none;
+}
+
+input:checked + label{
+    width: 600px;
+}
+
+input:checked + label .description{
+    opacity: 1 !important;
+    transform: translate(0) !important;
+}
+
+.card[for="c1"]{
+    background-image: url(images/naruto-uzumaki-3840x2160-18690.jpg);
+}
+
+.card[for="c2"]{
+    background-image: url(images/sun-god-nika-gear-5-3840x2160-18351.jpg);
+}
+
+.card[for="c3"]{
+    background-image: url(images/744652.png);
+}
+
+.card[for="c4"] {
+    background-image: url(images/statue-of-god-solo-3840x2160-15282.jpeg);
+}
+
+.card[for="c5"] {
+    background-image: url(images/tanjiro-kamado-red-3840x2160-22577.png);
+}
+
+.card[for="c6"]{
+    background-image: url(images/my-hero-academia-3840x2160-19030.jpg);
+}
+.card[for="c7"] {
+    background-image: url(images/sukuna-pink-3840x2160-16934.png);
+}
+
+
+
+@media (max-width: 900px) {
+    .container {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+    .card {
+        width: 90vw;
+        min-width: 250px;
+        max-width: 95vw;
+        margin: 10px 0;
+        border-radius: 1rem;
+    }
+    .card > .row > .description {
+        width: 100%;
+        font-size: 0.95em;
+    }
+    input:checked + label {
+        width: 95vw;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .wrapper {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    .card > .row > .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+        margin: 10px;
+    }
+    .card > .row > .description {
+        font-size: 0.9em;
+        padding: 5px;
+    }
+}
